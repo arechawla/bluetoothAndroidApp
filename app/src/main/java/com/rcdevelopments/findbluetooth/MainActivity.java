@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.rcdevelopments.findbluetooth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,12 +14,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             if (action.equals(BluetoothDevice.ACTION_FOUND)){
                 BluetoothDevice device = intent.getParcelableExtra (BluetoothDevice.EXTRA_DEVICE);
 
-                if (!mBTDevices.contains(device)) {
+                if (!mBTDevices.contains(device) && device.getName() != null) {
                     mBTDevices.add(device);
                 }
 
@@ -197,6 +195,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnScan(View view) {
         Log.d(TAG, "btnDiscover: Looking for unpaired devices.");
+        Toast msg = Toast.makeText(getApplicationContext(), "Searching for devices...", Toast.LENGTH_SHORT);
+        msg.show();
 
         mBTDevices.clear();
         lvNewDevices.setAdapter(null);

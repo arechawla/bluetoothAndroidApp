@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.rcdevelopments.findbluetooth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -49,11 +48,11 @@ public class DeviceScreen extends AppCompatActivity {
         name = findViewById(R.id.deviceName);
         address = findViewById(R.id.deviceMAC);
         bar = findViewById(R.id.progressBar);
-        message = findViewById(R.id.tvmsg);
+//        message = findViewById(R.id.tvmsg);
         dec = findViewById(R.id.tvdec);
         distance = findViewById(R.id.distance);
 
-        message.setText("If the bar does not update about every 5 seconds, your device may be out of range.");
+//        message.setText("If the bar does not update about every 5 seconds, your device may be out of range.");
 
         if (dev.getName() != null) {
             name.setText(dev.getName());
@@ -92,20 +91,26 @@ public class DeviceScreen extends AppCompatActivity {
                     int val = Integer.parseInt(rssi);
                     if (val < -95) {
                         bar.setProgress(10);
+                        distance.setText(">50m");
                     }
                     else if (val < -90) {
                         bar.setProgress(20);
-
+                        distance.setText(">40m");
                     } else if (val < -85) {
                         bar.setProgress(30);
+                        distance.setText("<30m");
                     } else if (val < -80) {
-                        bar.setProgress(40);
+                        bar.setProgress(35);
+                        distance.setText("<16m");
                     } else if (val < -75) {
                         bar.setProgress(50);
+                        distance.setText("<10m");
                     } else if (val < -70) {
                         bar.setProgress(60);
+                        distance.setText("<8m");
                     } else if (val < -65 ) {
                         bar.setProgress(70);
+                        distance.setText("<7m");
                     } else if (val < -60) {
                         bar.setProgress(80);
                         distance.setText("<7m");

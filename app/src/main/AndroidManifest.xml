@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.rcdevelopments.findbluetooth">
 
     <uses-feature android:name="android.hardware.bluetooth" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -16,12 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeviceScreen"
-            android:label="Device Search (Beta)"
+        <activity android:name="com.rcdevelopments.findbluetooth.DeviceScreen"
+            android:label="Device Search"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".MainActivity"
-            android:label="Find my Devices"
+            android:name="com.rcdevelopments.findbluetooth.MainActivity"
+            android:label="Find my Bluetooth Devices"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

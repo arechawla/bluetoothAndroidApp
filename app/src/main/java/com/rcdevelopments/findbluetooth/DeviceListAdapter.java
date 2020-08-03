@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.rcdevelopments.findbluetooth;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
@@ -33,12 +33,12 @@ public class DeviceListAdapter extends ArrayAdapter<BluetoothDevice> {
             TextView deviceName = (TextView) convertView.findViewById(R.id.tvDeviceName);
             TextView deviceAdress = (TextView) convertView.findViewById(R.id.tvDeviceName2);
 
-            if (deviceName != null) {
+            if (device.getName() != null) {
 
                 System.out.println(("Device name: " + device.getName()));
                 deviceName.setText(device.getName());
             } else {
-                deviceName.setText("No name");
+                deviceName.setText("Unnamed Device");
             }
 
             if (deviceAdress != null) {

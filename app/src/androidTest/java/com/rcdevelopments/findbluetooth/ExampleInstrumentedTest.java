@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.rcdevelopments.findbluetooth;
 
 import android.content.Context;
 

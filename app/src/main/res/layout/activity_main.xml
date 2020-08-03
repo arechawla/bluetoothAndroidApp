@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:layout_marginTop="32dp"
-        android:text="Paired Devices:"
+        android:text="Found Devices:"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
